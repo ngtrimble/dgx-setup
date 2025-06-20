@@ -1,0 +1,59 @@
+[all]
+erisxdl4 ansible_host=192.168.1.11
+dgx-2   ansible_host=192.168.1.22
+dgx-3   ansible_host=192.168.1.23
+dgx-4   ansible_host=192.168.1.24
+dgx-5   ansible_host=192.168.1.25
+
+
+
+
+[mgmt]
+erisxdl4
+
+[node]
+dgx-2
+dgx-3
+dgx-4
+dgx-5
+
+[dgx]
+dgx-2
+dgx-3
+dgx-4
+dgx-5
+
+[lambda]
+
+[provision]
+erisxdl4
+
+
+[all:vars]
+ansible_user=dgxadmin
+container_registry_ip=192.168.1.11
+cluster_timezone="America/New_York"
+[provision:vars]
+ansible_python_interpreter=/usr/bin/python
+ansible_connection=local
+apt_cache_path=/opt/apt
+deepops_path=/home/dgxadmin/deepops
+docker_cache_path=/opt/docker_mirror
+
+[node:vars]
+ansible_python_interpreter=/usr/bin/python3
+apt_cache_host=apt-proxy.local
+apt_cache_port=30142
+docker_cache_host=docker-proxy.local
+docker_cache_port=30128
+install_panfs_driver=true
+
+[dgx:vars]
+allow_node_reboot=false
+allow_panfs_driver_uninstall=false
+
+[lambda:vars]
+install_lambda_repos=false
+install_lambda_stack=true
+allow_node_reboot=true
+allow_panfs_driver_uninstall=false
