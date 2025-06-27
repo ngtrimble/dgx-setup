@@ -76,6 +76,7 @@
     pip:
       name: docker
     become: yes
+    tags: never # RGK: Already installed
 
 - name: Prep All nodes
   hosts: all
