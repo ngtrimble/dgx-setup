@@ -1,15 +1,17 @@
 [all]
-erisxdl4 ansible_host=192.168.1.11
+#erisxdl1 ansible_host=192.168.1.11
+#erisxdl2 ansible_host=192.168.1.12
+#erisxdl3 ansible_host=192.168.1.13
+#erisxdl4 ansible_host=192.168.1.14
+erisxdl6 ansible_host=192.168.1.16
 dgx-2   ansible_host=192.168.1.22
 dgx-3   ansible_host=192.168.1.23
 dgx-4   ansible_host=192.168.1.24
 dgx-5   ansible_host=192.168.1.25
 
 
-
-
 [mgmt]
-erisxdl4
+erisxdl6
 
 [node]
 dgx-2
@@ -26,12 +28,12 @@ dgx-5
 [lambda]
 
 [provision]
-erisxdl4
+erisxdl6
 
 
 [all:vars]
 ansible_user=dgxadmin
-container_registry_ip=192.168.1.11
+container_registry_ip=192.168.1.16
 cluster_timezone="America/New_York"
 [provision:vars]
 ansible_python_interpreter=/usr/bin/python
