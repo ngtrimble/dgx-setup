@@ -48,7 +48,8 @@ apt_cache_host=apt-proxy.local
 apt_cache_port=30142
 docker_cache_host=docker-proxy.local
 docker_cache_port=30128
-install_panfs_driver=true
+#install_panfs_driver=true
+install_panfs_driver=false
 
 [dgx:vars]
 allow_node_reboot=false
