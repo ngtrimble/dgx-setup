@@ -59,16 +59,15 @@
     become: yes
     when: ansible_distribution == 'CentOS'
 
-  - name: Install CentOS Docker
-    yum:
-      name:
-        - docker-ce
-        - docker-ce-cli
-        - docker-ce-selinux
-    become: yes
-    # when: ansible_distribution == 'CentOS'
-    when: ansible_distribution == 'never'
-    # tags: never # RGK: Already installed
+#  - name: Install CentOS Docker
+#    yum:
+#      name:
+#        - docker-ce
+#        - docker-ce-cli
+#        - docker-ce-selinux
+#    become: yes
+#    when: ansible_distribution == 'CentOS'
+#    # tags: never # RGK: Already installed
 
   - name: Create Apt Cache Volume
     file:
