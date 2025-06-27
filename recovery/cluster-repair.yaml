@@ -62,6 +62,7 @@
         - docker-ce-selinux
     become: yes
     when: ansible_distribution == 'CentOS'
+    tags: never # RGK: Already installed
 
   - name: Start Docker
     service:
