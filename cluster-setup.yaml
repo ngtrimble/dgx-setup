@@ -96,6 +96,7 @@
     pip:
       name: docker
     become: yes
+    tags: never # RGK: Already installed
 
 ###
 ##  Setup All Cluster Nodes
@@ -271,7 +272,7 @@
           msg: "Panfs successfully loaded"
         when: lsmod_out.stdout == '1'
         
-    when: install_panfs_driver|bool == true
+    when: install_panfs_driver|bool == false # RGK already installed
 
   # Reboot if required
   - name: Check if Reboot is required
