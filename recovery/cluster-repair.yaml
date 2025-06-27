@@ -9,6 +9,7 @@
       name: pip
       state: latest
     become: yes
+    tags: never # RGK: Already installed
 
   - name: Remove pip urllib3 library
     pip:
